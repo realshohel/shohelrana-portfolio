@@ -1,0 +1,31 @@
+# Shohel Rana Portfolio
+
+Professional portfolio of Shohel Rana, a Web Developer and AI Solutions Developer.
+
+## Website
+
+- [Portfolio](https://shohelrana.top/)
+
+## Professional Profiles
+
+- [GitHub](https://github.com/realshohel)
+- [LinkedIn](https://www.linkedin.com/in/shohelrana-in/)
+- [Facebook](https://www.facebook.com/shohelranafb)
+
+## Services
+
+- WordPress Website Development
+- Custom WordPress Plugin Development
+- Woo Commerce Development
+- AI Integration
+- Modern Web Application Development
+
+## Skills
+
+- HTML5
+- CSS3
+- JavaScript
+- PHP
+- WordPress
+- Woo Commerce
+- AI Integration
