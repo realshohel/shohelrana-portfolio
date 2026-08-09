@@ -158,21 +158,47 @@ if (scrollTopBtn) {
 Mobile Menu
 ========================================== */
 
+
 const menuToggle = document.querySelector(".menu-toggle");
 const navMenu = document.querySelector(".nav-menu");
 
 if (menuToggle && navMenu) {
+
+    function closeMobileMenu() {
+        menuToggle.classList.remove("active");
+        navMenu.classList.remove("active");
+        document.body.classList.remove("menu-open");
+
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
+        menuToggle.setAttribute("title", "Open navigation menu");
+    }
+
+    function openMobileMenu() {
+        menuToggle.classList.add("active");
+        navMenu.classList.add("active");
+        document.body.classList.add("menu-open");
+
+        menuToggle.setAttribute("aria-expanded", "true");
+        menuToggle.setAttribute("aria-label", "Close navigation menu");
+        menuToggle.setAttribute("title", "Close navigation menu");
+    }
+
     menuToggle.addEventListener("click", () => {
-        menuToggle.classList.toggle("active");
-        navMenu.classList.toggle("active");
-        document.body.classList.toggle("menu-open");
+
+        const isOpen = menuToggle.classList.contains("active");
+
+        if (isOpen) {
+            closeMobileMenu();
+        } else {
+            openMobileMenu();
+        }
+
     });
 
     navMenu.querySelectorAll("a").forEach(link => {
         link.addEventListener("click", () => {
-            menuToggle.classList.remove("active");
-            navMenu.classList.remove("active");
-            document.body.classList.remove("menu-open");
+            closeMobileMenu();
         });
     });
 }
@@ -201,15 +227,17 @@ if (reveals.length) {
 
 
 /* ==========================================
-Dark / Light Theme
+   Dark / Light Theme
 ========================================== */
 
 const themeToggle = document.getElementById("theme-toggle");
 
 if (themeToggle) {
+
     const themeIcon = themeToggle.querySelector("i");
 
     function applyTheme(theme) {
+
         const isLight = theme === "light";
 
         document.body.classList.toggle("light-theme", isLight);
@@ -218,24 +246,38 @@ if (themeToggle) {
             themeIcon.classList.toggle("fa-sun", isLight);
             themeIcon.classList.toggle("fa-moon", !isLight);
         }
+
+        themeToggle.setAttribute(
+            "aria-label",
+            isLight
+                ? "Switch to dark mode"
+                : "Switch to light mode"
+        );
+
+        themeToggle.setAttribute(
+            "title",
+            isLight
+                ? "Switch to dark mode"
+                : "Switch to light mode"
+        );
     }
 
     const savedTheme = localStorage.getItem("theme") || "dark";
+
     applyTheme(savedTheme);
 
     themeToggle.addEventListener("click", () => {
-        const isLight = document.body.classList.toggle("light-theme");
+
+        const isLight =
+            document.body.classList.toggle("light-theme");
+
         const theme = isLight ? "light" : "dark";
 
         localStorage.setItem("theme", theme);
 
-        if (themeIcon) {
-            themeIcon.classList.toggle("fa-sun", isLight);
-            themeIcon.classList.toggle("fa-moon", !isLight);
-        }
+        applyTheme(theme);
     });
 }
-
 
 /* ==========================================
 Premium Preloader
