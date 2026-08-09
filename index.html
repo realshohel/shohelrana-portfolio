@@ -162,7 +162,7 @@
 
     <!-- Navigation -->
 
-    <ul class="nav-menu">
+    <ul class="nav-menu" id="primary-navigation">
 
         <li><a href="#home" class="active">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -178,9 +178,14 @@
 
         <!-- Theme Toggle -->
 
-        <button id="theme-toggle" class="theme-toggle">
-            <i class="fas fa-moon"></i>
-        </button>
+        <button
+            id="theme-toggle"
+            class="theme-toggle"
+            type="button"
+            aria-label="Toggle dark and light mode"
+            title="Toggle dark and light mode">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+       </button>
 
         <!-- Hire Me -->
 
@@ -192,13 +197,19 @@
 
     <!-- Mobile Menu Button -->
 
-    <div class="menu-toggle">
+    <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+        title="Open navigation menu">
 
         <span></span>
         <span></span>
         <span></span>
 
-    </div>
+    </button>
 
 </nav>
 
@@ -863,10 +874,12 @@
 
 <!-- Scroll To Top -->
 
-<button id="scrollTopBtn">
-
-    <i class="fas fa-arrow-up"></i>
-
+<button
+    id="scrollTopBtn"
+    type="button"
+    aria-label="Scroll to top"
+    title="Scroll to top">
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
 </button>
 
      </main>
