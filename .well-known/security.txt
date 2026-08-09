@@ -1,0 +1,3 @@
+Contact: mailto:contact@shohelrana.top
+Canonical: https://shohelrana.top/.well-known/security.txt
+Preferred-Languages: en, bn
