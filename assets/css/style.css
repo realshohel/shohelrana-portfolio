@@ -1382,7 +1382,7 @@ padding:30px;
 
     text-align:center;
 
-    border-top:1px solid rgba(255,255,255,.06);
+    border-top:1px solid var(--border);
 
 }
 
@@ -1516,7 +1516,7 @@ padding:30px;
 
     padding-top:30px;
 
-    border-top:1px solid rgba(255,255,255,.06);
+    border-top:1px solid var(--border);
 
     display:flex;
 
